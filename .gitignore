@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Database (optional - remove if you want to include trained data)
+# db.sqlite3
+# db.sqlite3-wal
+# db.sqlite3-shm
+
+# NLTK data (downloaded at runtime)
+nltk_data/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
