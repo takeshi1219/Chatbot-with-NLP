@@ -2,10 +2,8 @@ services:
   - type: web
     name: chatbot-nlp
     env: python
-    buildCommand: |
-      pip install -r requirements.txt
-      python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab'); nltk.download('averaged_perceptron_tagger'); nltk.download('averaged_perceptron_tagger_eng'); nltk.download('stopwords'); nltk.download('wordnet')"
-    startCommand: gunicorn wsgi:app
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn wsgi:app --timeout 120
     envVars:
       - key: PYTHON_VERSION
         value: 3.10.12

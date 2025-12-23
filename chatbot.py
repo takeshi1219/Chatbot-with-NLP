@@ -1,4 +1,24 @@
 import yaml
+import nltk
+import os
+
+# Download required NLTK data
+nltk_data_dir = os.path.join(os.path.dirname(__file__), 'nltk_data')
+os.makedirs(nltk_data_dir, exist_ok=True)
+nltk.data.path.insert(0, nltk_data_dir)
+
+for package in ['punkt', 'punkt_tab', 'averaged_perceptron_tagger', 
+                'averaged_perceptron_tagger_eng', 'stopwords', 'wordnet']:
+    try:
+        nltk.data.find(f'tokenizers/{package}')
+    except LookupError:
+        try:
+            nltk.data.find(f'taggers/{package}')
+        except LookupError:
+            try:
+                nltk.data.find(f'corpora/{package}')
+            except LookupError:
+                nltk.download(package, download_dir=nltk_data_dir, quiet=True)
 
 # Fix for PyYAML compatibility with ChatterBot 1.0.4
 # Newer PyYAML requires a Loader argument for security
