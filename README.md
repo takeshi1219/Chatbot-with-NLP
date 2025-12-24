@@ -103,7 +103,7 @@ Chatbot-with-NLP/
 
 ## Screenshots
 
-![Chat Interface](chat1.png) ![Conversation](chat2.png)
+![Conversation](chat2.png)
 
 ## License
 
